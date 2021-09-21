@@ -69,9 +69,7 @@ while checker == -1:
                                             for i in computerNumber:
                                                 if i % 7 != remainder7:
                                                     computerNumber.remove(i)
-                                                    for i in computerNumber:
-                                                        if i % 3 != remainder3:
-                                                            computerNumber.remove(i)
+
     print('Your number was', computerNumber)
     print('How amazing is that?\n')
     playAgain = input('Do you want to play again? Y to continue, N to quit\n')
