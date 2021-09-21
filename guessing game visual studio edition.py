@@ -1,6 +1,6 @@
 print('Welcome to the Flarsheim Guesser!')
-playAgain = Y
-while playAgain == Y:
+playAgain = 'Y'
+while playAgain == 'Y':
     print('Please think of a number between and including 1 and 100.\n')
     computerNumber = list(range(1,101)) #Creating a list from 1 to 100
         ### setting remainder 3 to be within parameters ###
@@ -71,5 +71,6 @@ while playAgain == Y:
                                                     computerNumber.remove(i)
     print('Your number was', computerNumber)
     print('How amazing is that?\n')
-    playAgain = input('Do you want to play again? Y to continue, N to quit\n')
-
+    playAgain = input('Do you want to play again? Y to continue, N to quit\n'.upper)
+    while playAgain != 'Y' or 'N':
+        playAgain = input('Do you want to play again? Y to continue, N to quit\n'.upper)
