@@ -69,10 +69,18 @@ while checker == -1:
                                             for i in computerNumber:
                                                 if i % 7 != remainder7:
                                                     computerNumber.remove(i)
+                                                    for i in computerNumber:
+                                                        if i % 3 != remainder3:
+                                                            computerNumber.remove(i)
     print('Your number was', computerNumber)
     print('How amazing is that?\n')
-    playAgain = str(input('Do you want to play again? Y to continue, N to quit\n'.upper))
-    while playAgain != 'Y' or 'N':
-        playAgain = str(input('Do you want to play again? Y to continue, N to quit\n'.upper))
-        if playAgain == 'N':
-            checker = 0
+    playAgain = input('Do you want to play again? Y to continue, N to quit\n')
+    checker = 0
+    while checker == 0:
+        if playAgain == 'Y' or 'y': 
+            checker = -1
+        elif playAgain == 'N' or 'n':
+            checker = -2
+            break
+        else:
+            playAgain = input('Do you want to play again? Y to continue, N to quit\n')
