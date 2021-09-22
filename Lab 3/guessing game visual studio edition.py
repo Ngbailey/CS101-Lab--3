@@ -1,5 +1,6 @@
 print('Welcome to the Flarsheim Guesser!')
 checker = -1
+
 while checker == -1:
     print('Please think of a number between and including 1 and 100.\n')
     computerNumber = list(range(1,101)) #Creating a list from 1 to 100
@@ -61,24 +62,39 @@ while checker == -1:
                         if i % 7 != remainder7:
                             computerNumber.remove(i)
                             for i in computerNumber:
-                                if i % 3 != remainder3:
+                                if i % 5 != remainder5:
                                     computerNumber.remove(i)
                                     for i in computerNumber:
-                                        if i % 5 != remainder5:
+                                        if i % 7 != remainder7:
                                             computerNumber.remove(i)
                                             for i in computerNumber:
-                                                if i % 7 != remainder7:
+                                                if i % 3 != remainder3:
                                                     computerNumber.remove(i)
-
+    for i in computerNumber:
+        if i % 3 != remainder3:
+            computerNumber.remove(i)
+            for i in computerNumber:
+                if i % 5 != remainder5:
+                    computerNumber.remove(i)
+                    for i in computerNumber:
+                        if i % 7 != remainder7:
+                            computerNumber.remove(i)
+                            for i in computerNumber:
+                                if i % 5 != remainder5:
+                                    computerNumber.remove(i)
+                                    for i in computerNumber:
+                                        if i % 7 != remainder7:
+                                            computerNumber.remove(i)
+                                            for i in computerNumber:
+                                                if i % 3 != remainder3:
+                                                    computerNumber.remove(i)
     print('Your number was', computerNumber)
     print('How amazing is that?\n')
     playAgain = input('Do you want to play again? Y to continue, N to quit\n')
-    checker = 0
-    while checker == 0:
-        if playAgain == 'Y' or 'y': 
-            checker = -1
-        elif playAgain == 'N' or 'n':
-            checker = -2
+    while checker == -1:
+        if playAgain == 'Y': 
             break
+        elif playAgain == 'N':
+            checker = 200
         else:
             playAgain = input('Do you want to play again? Y to continue, N to quit\n')
