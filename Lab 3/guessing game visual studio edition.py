@@ -52,6 +52,8 @@ while checker == -1:
         while remainder7 < 0:
             print('The value entered must be 0 or greater')
             remainder7 = int(input('What is the remainder when your number is divided by 7 ?\n'))
+            
+            ### removing numbers from list to narrow possible number down
     for i in computerNumber:
         if i % 3 != remainder3:
             computerNumber.remove(i)
@@ -88,6 +90,15 @@ while checker == -1:
                                             for i in computerNumber:
                                                 if i % 3 != remainder3:
                                                     computerNumber.remove(i)
+    for i in computerNumber:
+        if i % 3 != remainder3:
+            computerNumber.remove(i)
+    for i in computerNumber:
+        if i % 5 != remainder5:
+            computerNumber.remove(i)
+    for i in computerNumber:
+        if i % 7 != remainder7:
+            computerNumber.remove(i)
     print('Your number was', computerNumber)
     print('How amazing is that?\n')
     playAgain = input('Do you want to play again? Y to continue, N to quit\n')
