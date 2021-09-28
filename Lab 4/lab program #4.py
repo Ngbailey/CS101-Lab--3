@@ -32,7 +32,7 @@ def get_slot_results():
     x = random.randint(1,10)
     y = random.randint(1,10)
     z = random.randint(1,10)
-    slotresult = ('x','y','z')
+    slotresult = (x,y,z)
     return slotresult
 
 
