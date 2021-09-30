@@ -95,8 +95,7 @@ while checker ==-1:
     else:
         bank += get_payout(chips,matches)
     print('You have {} chips left\n'.format(bank))
-    play_again()
-    if play_again == True:
+    if play_again() == True:
         checker = -1
     else:
         checker = 200
