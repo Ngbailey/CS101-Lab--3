@@ -11,6 +11,14 @@ def program_grades():
     program_score = input('\nEnter the new Assignment score 0-100 ==> ')
     return program_score
 
+def program_remove():
+    remove = input('\nEnter the Assignment score to remove 0-100 ==> ')
+    return remove
+
+def test_remove():
+    remove = input('\nEnter the Test score to remove 0-100 ==> ')
+    return remove
+
 def menu():
     print()
     print('Grade Menu'.center(50))
@@ -98,7 +106,7 @@ while checker == -1:
         test.append(test_grades())
     if prompt == '2':
         try:
-            test.remove(test_grades())
+            test.remove(test_remove())
         except:
             print('Could not find that score to remove')
     if prompt == '3':
@@ -107,7 +115,7 @@ while checker == -1:
         program.append(program_grades())
     if prompt == '5':
         try:
-            program.remove(program_grades())
+            program.remove(program_remove())
         except:
             print('Could not find that score to remove')
     if prompt == '6':
