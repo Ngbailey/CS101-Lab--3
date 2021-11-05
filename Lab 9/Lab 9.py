@@ -102,8 +102,8 @@ def create_offense_by_zip(lstc):
 checker = -1
 while checker == -1:
     try:
-        fileName = input('Enter the name of the crime data file: ').strip()
-        critical_info = strip(read_in_file(fileName))
+        file_name = input('Enter the name of the crime data file: ').strip()
+        critical_info = strip(read_in_file(file_name))
         date_modified_critical = date_type_mod(critical_info)
         sorted_dic = dict(sorted(create_reported_month_dict(date_modified_critical).items()))
         for key in sorted_dic.keys():
@@ -120,7 +120,7 @@ while checker == -1:
                 sorted_offenses[frequent_offense], 'offenses.\n')
         checker = 0
     except FileNotFoundError:
-        print('Could not find the file specified.', fileName, 'not found.')
+        print('Could not find the file specified.', file_name, 'not found.')
 checker2 = -1
 while checker2 == -1:
     try:
