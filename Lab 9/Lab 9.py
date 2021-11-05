@@ -3,6 +3,7 @@
 #Program 9
 #Created on November 2nd 2021 
 #Due November 5th 2021
+import csv
 def month_from_number(num):
     months = {
         1: 'January',
@@ -24,7 +25,6 @@ def month_from_number(num):
         raise ValueError
 
 def read_in_file(x):
-    import csv
     try:
         with open(x, 'r', encoding='utf-8') as f:
             reader_x = list(csv.reader(f))
@@ -54,11 +54,11 @@ def date_type_mod(lsty):
 
 def create_reported_date_dict(lstz):
     reports_by_date = {}
-    for tup in lstz:
-        if tup[0] not in reports_by_date.keys():
-            reports_by_date[tup[0]] = 1
+    for l in lstz:
+        if l[0] not in reports_by_date.keys():
+            reports_by_date[l[0]] = 1
         else:
-            reports_by_date[tup[0]] += 1
+            reports_by_date[l[0]] += 1
     return reports_by_date
 
 
@@ -105,12 +105,10 @@ while checker == -1:
         fileName = input('Enter the name of the crime data file: ').strip()
         critical_info = strip(read_in_file(fileName))
         date_modified_critical = date_type_mod(critical_info)
-
         sorted_dic = dict(sorted(create_reported_month_dict(date_modified_critical).items()))
         for key in sorted_dic.keys():
             if sorted_dic[key] == max(sorted_dic.values()):
                 month_num = key
-
         sorted_offenses = dict(sorted(create_offense_dict(critical_info).items()))
         for key in sorted_offenses.keys():
             if sorted_offenses[key] == max(sorted_offenses.values()):
@@ -130,12 +128,10 @@ while checker2 == -1:
         crime_dict = create_offense_by_zip(critical_info)[search_criteria]
         print()
         table_format = '{zipcode:<15}{count:>10}'
-
         if search_criteria in create_offense_by_zip(critical_info).keys():
             print(search_criteria, 'offenses by Zip Code')
             print(table_format.format(zipcode='Zip Code', count='# Offenses'))
             print('=' * 25)
-
             for sub_dic in crime_dict.keys():
                 print(table_format.format(zipcode=sub_dic, count=crime_dict[sub_dic]))
             checker2 = 0
