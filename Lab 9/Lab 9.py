@@ -33,12 +33,6 @@ def read_in_file(x):
         raise FileNotFoundError
 
 
-def strip(lstx):
-    stripped_listx = []
-    for l in range(1, len(lstx)):
-        stripped_listx.append((lstx[l][1], lstx[l][7], lstx[l][13]))
-    return stripped_listx
-
 
 def date_type_mod(lsty):
     mod_listy = []
@@ -97,7 +91,11 @@ def create_offense_by_zip(lstc):
             continue
     return offense_by_zip
 
-
+def strip(lstx):
+    stripped_listx = []
+    for l in range(1, len(lstx)):
+        stripped_listx.append((lstx[l][1], lstx[l][7], lstx[l][13]))
+    return stripped_listx
 
 checker = -1
 while checker == -1:
