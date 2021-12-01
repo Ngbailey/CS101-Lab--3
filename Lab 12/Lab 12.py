@@ -27,6 +27,7 @@ class Point(object):
         turtle.color(self.color)
         turtle.setheading(0)
         self.draw_action()
+        turtle.done()
     def draw_action(self):
         turtle.dot()
 class Box(Point):
@@ -42,7 +43,7 @@ class Box(Point):
         turtle.forward(self.width)
         turtle.right(90)
         turtle.forward(self.height)
-        turtle.done()
+        
 class BoxFilled(Box):
     def __init__(self,x1,y1,width,height,color,fillcolor):
         super().__init__(x1,y1,width,height,color)
@@ -52,7 +53,7 @@ class BoxFilled(Box):
         turtle.begin_fill()
         Box.draw_action(self)
         turtle.end_fill()
-        turtle.done()
+        
 class Circle(Point):
     def __init__(self,x1,y1,radius,color):
         super().__init__(x1,y1,color)
@@ -68,7 +69,9 @@ class CircleFilled(Circle):
         turtle.begin_fill()
         Circle.draw_action(self)
         turtle.end_fill()
-        turtle.done()
+        
 
 b = CircleFilled(1,2,100,'red','Blue')
+c = BoxFilled(1,2,30,40,'red','blue')
+
 b.draw()
