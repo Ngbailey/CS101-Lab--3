@@ -1,0 +1,78 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 #Nathan Gregorian Bailey\par
+#Section 0003\par
+#Program 6\par
+#Created on December 4th 2021 \par
+#Due December 11th 2021\par
+
+\pard\sa200\sl276\slmult1\qc Algorithm\par
+
+\pard\sa200\sl276\slmult1\b 1. Start.\b0\par
+\b 2. \b0 Create class called Store.\par
+\tab\b 2.1\b0  Set constructor to have instance attributes of  self, name, and location with \tab\tab        default values of None and None respectively. Have self.name = name and \tab\tab        self.location = location.\par
+\tab\b 2.2 \b0 Create a setter method with attributes: self, storeName and storeLocation.  Have \tab\tab         self.name = storeName and self.location = storeLocation.\par
+\tab\b 2.3 \b0 Creat display method with attribute: of self.  Output the stores name and location\par
+\b 3. \b0 Create class called Cart that is inheriting the Store class.\par
+\tab\b 3.1\b0  Set constructor with instance attributes: of self, name, location, productName='', \tab\tab         quantity =0, cart=\{'Milk':0,'Bread':0,'Egg':0,'Flour':0,'Oil':0,'Cheese':0\},receipt=0.  \tab\tab          have a super().__init__(name,location).  Set self.productName = productName, \tab\tab          self.quantity = quantity, self.cart = cart, self.receipt = receipt.\par
+\tab\b 3.2\b0  Create the Add_item method with attributes self, product, quantity. have \tab\tab   \tab         self.productName = product and self.quantity = quantity.  If quantity entered is a \tab\tab         negative number inform the user that they can only enter positive numbers.  If \tab\tab         self.productName is in self.cart increase the value for the key of \tab\tab\tab\tab         self.cart[self.productName], otherwise inform the user that the store doesn't \tab\tab         have the item they entered.\par
+\tab\b 3.3\b0  Create the Remove_item method with attributes: self, product, quantity. have \tab\tab         self.procutName = product and self.quanitty = quantity.  If quantity entered is a \tab\tab         negative number inform the user that they can only enter positive numbers.    \tab   \tab         Then check to see if  self.productName is in self.cart AND that \tab\tab   \tab   \tab         self.cart[self.productName] is greater  than 0.  If it is then subtract the \tab\tab   \tab         self.quantity from self.cart[self.productName],  and if after doing that \tab\tab\tab         self.cart[self.priductname is less than zero set it to zero. Otherwise inform the \tab\tab         user that the item they entered is not in their cart.\par
+\tab\b 3.4\b0  Create the receipt_setter method with attributes: self, receipt=0, prices = \tab\tab    \tab         [2.50,1.98,.70,1.18,4.00,2.68].  have self.prices = prices, then for variables x and y \tab\tab         in the enumeration of self.cart have the receipt add to it's value self.cart[y] \tab\tab         multiplied by prices[x].  Have self.receipt = receipt and output self.receipt.\par
+\tab\b 3.5 \b0 Create the display method with attribute: self. output that the items inside that \tab\tab         cart are as follows.  Then for x,y in the enumeration of self.cart if the value of \tab\tab         self.cart[y] is greater than zero, output: "y with quantity of self.cart[y]".\par
+\b 4.\b0  Create a function called product_display.\par
+\tab\b 4.1\b0  Create the dictionary products = \tab\tab   \tab   \tab  \tab\tab\tab   \tab        \{'Milk':2.50,'Bread':1.98,'Egg':0.70,'Flour':1.18,'Oil':4.00,'Cheese':2.68\} followed by \tab\tab         outputing "Products as follows".  Then for x,y in the enumeration of products, \tab\tab         output "x : $ products[y].\par
+\b 5. \b0 Within the __main__, do the following:\par
+\tab\b 5.1\b0  Have variable b set to the class Store().\par
+\tab\b 5.2\b0  Ask the user to input the store's name and location and set them to store_name \tab\tab        and store_location respectively.\par
+\tab\b 5.3 \b0 Have b.setter() with attributes store_name and store_location.\par
+\tab\b 5.4\b0  Output b.display().\par
+\tab\b 5.5\b0  Output product_display().\par
+\tab\b 5.6 \b0 Have variable c set to class Cart() with inherited attributes b.name and b.location.\par
+\tab\b 5.7 \b0 Ask the user to to answer yes or no to if they want to add an item to their cart.\par
+\tab\b 5.8 \b0 While True do the following.\par
+\tab\tab\b 5.8.1\b0  If they entered yes then do the following.\par
+\tab\tab\tab\b 5.8.1.A\b0  Ask the user to enter the name of the product they wish to add \tab\tab\tab\tab set to product_add.\par
+\tab\tab\tab\b 5.8.1.B\b0  While True do the following.\par
+\tab\tab\tab\tab\b 5.8.1.B.1\b0  Try the following.\par
+\tab\tab\tab\tab\tab\b 5.8.1.B.1.1\b0  Ask the user to enter the amount of \tab\tab\tab\tab\tab\tab\tab       product they want to add set to \tab\tab\tab\tab\tab\tab\tab\tab       amount_add, and then break from the loop.\par
+\tab\tab\tab\tab\b 5.8.1.B.2\b0  If the user did not enter an integer and exception is \tab\tab\tab\tab\tab\tab    triggered for a ValueError and the user is informed to \tab\tab\tab\tab\tab    enter an integer.\par
+\tab\tab\tab\b 5.8.1.C\b0  Have c.add_item() with attributes product_add and \tab\tab\tab\tab\tab\tab amount_add.\par
+\tab\tab\tab\b 5.8.1.D\b0  Have c.display() and output  the total receipt is $ \tab\tab\tab\tab\tab\tab c.receipt_setter().\par
+\tab\tab\tab\b 5.8.1.E\b0  Ask the user if they want to add another product.\par
+\tab\tab\b 5.8.2\b0  If they entered no then break from the loop.\par
+\tab\tab\b 5.8.3\b0  If they did not enter yes or no, ask them to enter yes or no.\par
+\tab\b 5.9\b0  Ask the user if they would like to remove an item with yes or no.\par
+\tab\b 5.10 \b0 While True do the following.\par
+\tab\tab\b 5.10.1\b0  If they entered yes then do the following.\par
+\tab\tab\tab\b 5.10.1.A\b0  Ask the user to enter the name of the product they wish to \tab\tab\tab\tab\tab   remove and set to product_remove.\par
+\tab\tab\tab\b 5.10.1.B\b0  While True do the following.\par
+\tab\tab\tab\tab\b 5.10.1.B.1\b0  Try the following.\par
+\tab\tab\tab\tab\tab\b 5.10.1.B.1.1\b0  Ask the user to enter the amount of \tab\tab\tab\tab\tab\tab\tab       product they want to remove set to \tab\tab\tab\tab\tab\tab\tab\tab       amount_remove, and then break from the \tab\tab\tab\tab\tab\tab\tab       loop.\par
+\tab\tab\tab\tab\b 5.10.1.B.2\b0  If the user did not enter an integer and exception is \tab\tab\tab\tab\tab\tab    triggered for a ValueError and the user is informed to \tab\tab\tab\tab\tab    enter an integer.\par
+\tab\tab\tab\b 5.10.1.C\b0  Have c.add_item() with attributes product_remove and \tab\tab\tab\tab\tab  amount_remove.\par
+\tab\tab\tab\b 5.10.1.D\b0  Have c.display() and output  the total receipt is $ \tab\tab\tab\tab\tab\tab c.receipt_setter().\par
+\tab\tab\tab\b 5.10.1.E\b0  Ask the user if they want to remove another product.\par
+\tab\tab\b 5.10.2\b0  If they entered no then break from the loop.\par
+\tab\tab\b 5.10.3\b0  If they did not enter yes or no, ask them to enter yes or no.\par
+\b\tab 5.11 \b0 Ask the user to to answer yes or no to if they want to add an item to their cart \tab\tab           and inform that this is their last chance to add items.\par
+\tab\b 5.12 \b0 While True do the following.\par
+\tab\tab\b 5.12.1\b0  If they entered yes then do the following.\par
+\tab\tab\tab\b 5.12.1.A\b0  Ask the user to enter the name of the product they wish to \tab\tab\tab\tab\tab   add set to product_add.\par
+\tab\tab\tab\b 5.12.1.B\b0  While True do the following.\par
+\tab\tab\tab\tab\b 5.12.1.B.1\b0  Try the following.\par
+\tab\tab\tab\tab\tab\b 5.12.1.B.1.1\b0  Ask the user to enter the amount of \tab\tab\tab\tab\tab\tab\tab       product they want to add set to \tab\tab\tab\tab\tab\tab\tab\tab       amount_add, and then break from the loop.\par
+\tab\tab\tab\tab\b 5.12.1.B.2\b0  If the user did not enter an integer and exception is \tab\tab\tab\tab\tab\tab    triggered for a ValueError and the user is informed to \tab\tab\tab\tab\tab    enter an integer.\par
+\tab\tab\tab\b 5.12.1.C\b0  Have c.add_item() with attributes product_add and \tab\tab\tab\tab\tab\tab amount_add.\par
+\tab\tab\tab\b 5.12.1.D\b0  Have c.display() and output  the total receipt is $ \tab\tab\tab\tab\tab\tab c.receipt_setter().\par
+\tab\tab\tab\b 5.12.1.E\b0  Ask the user if they want to add another product.\par
+\tab\tab\b 5.12.2\b0  If they entered no then break from the loop.\par
+\tab\tab\b 5.12.3\b0  If they did not enter yes or no, ask them to enter yes or no.\par
+\tab\b 5.13 \b0 Output that you want to thank the user for shopping at the name of the store and \tab           it's location.\par
+\tab\b 5.14\b0  c.display()\par
+\tab\b 5.15 \b0 if c.receipt_setter() is less than or equal to zero do the following\par
+\tab\tab\b 5.15.1\b0  Output that the cart is empty\par
+\tab\b 5.16\b0  Output that total of the users receipt which is $ c.receipt.setter().\par
+\b 6. End\b0\par
+\b\par
+}
+ 
